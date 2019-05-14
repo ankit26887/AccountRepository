@@ -106,7 +106,7 @@ public class AccountController {
 	 * @return Account
 	 * @throws UserNotFoundException
 	 */
-	@RequestMapping(value="/change/accountType/{accountNo}")
+	@RequestMapping(value="/change/accountType/{accountNo}",method=RequestMethod.PATCH)
 	public Account changeAccountType(@RequestBody String accountType,@PathVariable(name="accountNo") long accountNo) throws UserNotFoundException {
 		logger.info("Changing the account type");
 		Account accountDetails = accService.getAccountDetails(accountNo);
